@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Checkbox from 'react-custom-checkbox';
 import classes from '../styles/Task.module.css';
+import cn from 'classnames';
 
 import checkIcon from '../assets/check.png';
 import editImg from '../assets/edit.png';
@@ -8,9 +9,10 @@ import editHoverImg from '../assets/edit-hover.png';
 import deleteImg from '../assets/delete.png';
 import deleteHoverImg from '../assets/delete-hover.png';
 
-function Task({id, text, date}) {
+function Task({ id, text, date }) {
   const [editIcon, setEditIcon] = useState(editImg);
   const [deleteIcon, setDeleteIcon] = useState(deleteImg);
+  const [taskStatus, setTaskStatus] = useState(false);
 
   return (
     <div className={classes.wrap}>
@@ -29,8 +31,9 @@ function Task({id, text, date}) {
         borderRadius={5}
         size={18}
         className={classes.checkbox}
+        onChange={() => setTaskStatus(!taskStatus)}
       />
-      <div className={classes.text/* +' '+classes.done */}>{text}</div>
+      <div className={cn(classes.text, { [classes.done]: taskStatus })}>{text}</div>
       <div>
         <div className={classes.time}>{date}</div>
         <div className={classes.btnWrap}>
