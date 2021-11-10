@@ -19,12 +19,27 @@ const CreationField = () => {
     if (identicalText) message = 'This task already exists';
 
     if (inputValue && !identicalText) {
-      dispatch(addTask(taskId, inputValue));
+      const date = setDate();
+      dispatch(addTask(taskId, inputValue, date));
       setTaskId(taskId + 1);
+      setInputValue('');
     } else {
       dispatch(showPopup(message));
     }
   };
+
+  const setDate = () => {
+    const date = new Date();
+    const options = {
+      month: 'long',
+      day: 'numeric',
+      timezone: 'UTC',
+      hour: 'numeric',
+      minute: 'numeric',
+    };
+
+    return date.toLocaleString("en-US", options);
+  }
 
   return (
     <div className={classes.wrap}>

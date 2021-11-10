@@ -10,7 +10,7 @@ const task = (state = initialState, action) => {
         ...state,
         tasksList: [
           ...state.tasksList,
-          { id: action.id, text: action.text }
+          { id: action.id, text: action.text, date: action.date }
         ],
       };
 

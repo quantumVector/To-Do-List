@@ -8,7 +8,7 @@ import editHoverImg from '../assets/edit-hover.png';
 import deleteImg from '../assets/delete.png';
 import deleteHoverImg from '../assets/delete-hover.png';
 
-function Task({id, text}) {
+function Task({id, text, date}) {
   const [editIcon, setEditIcon] = useState(editImg);
   const [deleteIcon, setDeleteIcon] = useState(deleteImg);
 
@@ -32,7 +32,7 @@ function Task({id, text}) {
       />
       <div className={classes.text/* +' '+classes.done */}>{text}</div>
       <div>
-        <div className={classes.time}>10 ноября 5:00</div>
+        <div className={classes.time}>{date}</div>
         <div className={classes.btnWrap}>
           <div className={classes.btn}
             onMouseOver={() => setEditIcon(editHoverImg)}

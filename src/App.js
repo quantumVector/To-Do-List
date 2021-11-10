@@ -11,7 +11,11 @@ function App() {
       <Header />
       <AddTaskForm />
       {tasksList.length > 0 &&
-        tasksList.map((item) => <Task id={item.id} text={item.text} key={item.id} />)}
+        tasksList.map((item) => <Task
+          id={item.id}
+          text={item.text}
+          date={item.date}
+          key={item.id} />)}
       <Popup />
     </div>
   );
