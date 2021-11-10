@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React from 'react';
 import classes from '../styles/Popup.module.css';
 import cn from 'classnames';

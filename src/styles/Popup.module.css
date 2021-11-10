@@ -1,8 +1,14 @@
 .wrap {
   position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   padding: 10px;
   top: -100px;
   left: 200px;
@@ -19,12 +25,23 @@
 
 .enable {
   top: 0;
-  animation: showPopup 0.3s alternate;
+  -webkit-animation: showPopup 0.3s alternate;
+          animation: showPopup 0.3s alternate;
 }
 
 .disable {
   top: -100px;
-  animation: hidePopup 0.3s alternate;
+  -webkit-animation: hidePopup 0.3s alternate;
+          animation: hidePopup 0.3s alternate;
+}
+
+@-webkit-keyframes showPopup {
+  from {
+    top: -100px;
+  }
+  to {
+    top: 0;
+  }
 }
 
 @keyframes showPopup {
@@ -36,7 +53,7 @@
   }
 }
 
-@keyframes hidePopup {
+@-webkit-keyframes hidePopup {
   from {
     top: 0;
   }
@@ -44,3 +61,12 @@
     top: -100px;
   }
 }
+
+@keyframes hidePopup {
+  from {
+    top: 0;
+  }
+  to {
+    top: -100px;
+  }
+}/*  */
