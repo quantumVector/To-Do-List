@@ -1,0 +1,46 @@
+.wrap {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  top: -100px;
+  left: 200px;
+  width: 190px;
+  height: 45px;
+  border-radius: 5px;
+  background-color: #fa6767;
+}
+
+.text {
+  font-size: 20px;
+  color: #fff;
+}
+
+.enable {
+  top: 0;
+  animation: showPopup 0.3s alternate;
+}
+
+.disable {
+  top: -100px;
+  animation: hidePopup 0.3s alternate;
+}
+
+@keyframes showPopup {
+  from {
+    top: -100px;
+  }
+  to {
+    top: 0;
+  }
+}
+
+@keyframes hidePopup {
+  from {
+    top: 0;
+  }
+  to {
+    top: -100px;
+  }
+}

@@ -3,7 +3,7 @@ const initialState = {
   tasksList: [],
 };
 
-const housingStock = (state = initialState, action) => {
+const task = (state = initialState, action) => {
   switch (action.type) {
     case 'ADD_TASK':
       return {
@@ -19,4 +19,4 @@ const housingStock = (state = initialState, action) => {
   }
 };
 
-export default housingStock;
+export default task;

@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { Header, AddTaskForm, Task } from './components';
+import { Header, AddTaskForm, Task, Popup } from './components';
 
 function App() {
   return (
@@ -10,6 +10,7 @@ function App() {
       <Task />
       <Task />
       <Task />
+      <Popup />
     </div>
   );
 }
