@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import './App.css';
-import { Header, AddTaskForm, Task, Popup } from './components';
+import { Header, Form, Task, Popup } from './components';
 
 function App() {
   const tasksList = useSelector(({ tasks }) => tasks.tasksList);
@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="wrapper">
       <Header />
-      <AddTaskForm />
+      <Form />
       {tasksList.length > 0 &&
         tasksList.map((item) => <Task
           id={item.id}

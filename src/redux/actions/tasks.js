@@ -8,7 +8,7 @@ export const deleteTask = (id) => ({
   id,
 });
 
-export const editTask = (id) => ({
+export const editTask = (id, text) => ({
   type: 'EDIT_TASK',
-  id,
+  id, text,
 });
