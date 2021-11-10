@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { showPopup } from '../redux/actions/popup';
 import { addTask } from '../redux/actions/tasks';
 import classes from '../styles/AddTaskForm.module.css';
+import Field from './Field';
 
 const CreationField = () => {
   const dispatch = useDispatch();
@@ -43,10 +44,7 @@ const CreationField = () => {
 
   return (
     <div className={classes.wrap}>
-      <input className={classes.field}
-        type="text"
-        value={inputValue}
-        onChange={e => setInputValue(e.target.value)} />
+      <Field value={inputValue} setValue={setInputValue} width='520px' />
       <div className={classes.btn}
         onClick={onAddTask}>+</div>
     </div>
