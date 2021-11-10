@@ -1,8 +1,8 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { showPopup } from '../redux/actions/popup';
 import { addTask } from '../redux/actions/tasks';
 import classes from '../styles/Form.module.css';
+import { validator } from '../utils/validator';
 
 const CreationField = () => {
   const dispatch = useDispatch();
@@ -11,20 +11,11 @@ const CreationField = () => {
   const tasksList = useSelector(({ tasks }) => tasks.tasksList);
 
   const onAddTask = () => {
-    //checking for the presence of the same task
-    const identicalText = tasksList.find(item => item.text === inputValue);
-
-    let message;
-    if (!inputValue) message = `Can't send empty text`;
-    if (identicalText) message = 'This task already exists';
-
-    if (inputValue && !identicalText) {
+    if (validator(tasksList, inputValue, dispatch)) {
       const date = setDate();
       dispatch(addTask(taskId, inputValue, date));
       setTaskId(taskId + 1);
       setInputValue('');
-    } else {
-      dispatch(showPopup(message));
     }
   };
 

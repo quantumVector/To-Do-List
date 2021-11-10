@@ -1,10 +1,11 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import Checkbox from 'react-custom-checkbox';
 import classes from '../styles/Task.module.css';
 import cn from 'classnames';
 import { deleteTask, editTask } from '../redux/actions/tasks';
 import Button from './Button';
+import { validator } from '../utils/validator';
 
 import checkIcon from '../assets/check.png';
 import editImg from '../assets/edit.png';
@@ -15,12 +16,13 @@ import deleteHoverImg from '../assets/delete-hover.png';
 import confirmImg from '../assets/confirm.png';
 import resetImg from '../assets/reset.png';
 
-function Task({ id, text, date }) {
+const Task = ({ id, text, date }) => {
   const dispatch = useDispatch();
   const [taskStatus, setTaskStatus] = React.useState(false);
   const [editMod, setEditeMod] = React.useState(false);
   const [inputValue, setInputValue] = React.useState('');
   const [activeEditIcon, setActiveEditIcon] = React.useState(false);
+  const tasksList = useSelector(({ tasks }) => tasks.tasksList);
 
   const edit = () => {
     setEditeMod(true);
@@ -34,10 +36,12 @@ function Task({ id, text, date }) {
   }
 
   const confirm = () => {
-    dispatch(editTask(id, inputValue));
-    setEditeMod(false);
-    setActiveEditIcon(false);
-    setInputValue('');
+    if (validator(tasksList, inputValue, dispatch)) {
+      dispatch(editTask(id, inputValue));
+      setEditeMod(false);
+      setActiveEditIcon(false);
+      setInputValue('');
+    }
   }
 
   return (
