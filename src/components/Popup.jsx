@@ -27,7 +27,7 @@ const Popup = () => {
           setTimeout(() => setHideAnimation(false), 1000)
         });
     }
-  }, [display])
+  }, [display]);
 
   return (
     <div className={cn(classes.wrap, {

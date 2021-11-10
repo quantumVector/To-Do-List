@@ -8,7 +8,7 @@ import editHoverImg from '../assets/edit-hover.png';
 import deleteImg from '../assets/delete.png';
 import deleteHoverImg from '../assets/delete-hover.png';
 
-function Task() {
+function Task({id, text}) {
   const [editIcon, setEditIcon] = useState(editImg);
   const [deleteIcon, setDeleteIcon] = useState(deleteImg);
 
@@ -30,7 +30,7 @@ function Task() {
         size={18}
         className={classes.checkbox}
       />
-      <div className={classes.text/* +' '+classes.done */}>Buy Pizza on the way to work</div>
+      <div className={classes.text/* +' '+classes.done */}>{text}</div>
       <div>
         <div className={classes.time}>10 ноября 5:00</div>
         <div className={classes.btnWrap}>
