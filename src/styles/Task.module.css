@@ -1,0 +1,48 @@
+.wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+  border-bottom: 1px solid #b2b3d0;
+}
+
+.checkbox {
+  cursor: pointer;
+}
+
+.checkbox:hover {
+  outline: 1px solid #b2b3d0;
+}
+
+.text {
+  padding: 15px 0;
+  width: 400px;
+  font-size: 23px;
+}
+
+.done {
+  text-decoration: line-through;
+  color: #b2b3d0;
+}
+
+.time {
+  padding-bottom: 5px;
+  font-size: 16px;
+  color: #b2b3d0;
+}
+
+.btnWrap {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  padding-bottom: 5px;
+}
+
+.btn {
+  margin-right: 5px;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-size: contain;
+}

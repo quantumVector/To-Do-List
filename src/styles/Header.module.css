@@ -1,0 +1,21 @@
+.wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.title {
+  font-size: 30px;
+  font-weight: 500;
+  color: #5a5de3;;
+}
+
+.total {
+  font-size: 18px;
+  color: #b2b3d0;
+}
+
+.num {
+  font-weight: 500;
+}

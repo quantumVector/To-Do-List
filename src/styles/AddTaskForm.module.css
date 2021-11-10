@@ -1,0 +1,35 @@
+.wrap {
+  display: flex;
+  align-items: center;
+}
+
+.field {
+  padding: 0 10px;
+  margin-right: 10px;
+  width: 530px;
+  height: 50px;
+  font-size: 22px;
+  border: 1px solid #b2b3d0;
+  border-radius: 5px;
+}
+
+.field:focus {
+  outline: 1px solid #5a5de3;
+}
+
+.btn {
+  vertical-align: middle;
+  text-align: center;
+  width: 50px;
+  height: 50px;
+  font-size: 35px;
+  line-height: 43px;
+  background-color: #fa6767;
+  color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #5a5de3;
+}
